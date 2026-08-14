@@ -7,7 +7,9 @@ import { ParsedIntent } from '@/types';
 import { useApp } from '@/lib/store';
 import { YOU, PERSONA } from '@/lib/personas';
 
-const BASE_STAGES = [
+type SearchStage = { label: string; duration: number; final?: boolean };
+
+const BASE_STAGES: SearchStage[] = [
   { label: 'Understanding your plan',        duration: 900 },
   { label: 'Searching nearby intentions',    duration: 1100 },
   { label: 'Comparing possible overlaps',    duration: 1000 },

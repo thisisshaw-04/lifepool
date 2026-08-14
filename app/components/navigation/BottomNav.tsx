@@ -1,7 +1,7 @@
 'use client';
 import { InkIcon, type InkName } from '@/app/components/ui/MangaIcons';
 
-type Screen = 'home' | 'search' | 'pools' | 'schedule' | 'profile' | 'roommate' | 'memory' | 'impact' | 'calendar' | 'circle' | 'invitePreview';
+type Screen = 'home' | 'search' | 'pools' | 'schedule' | 'profile' | 'roommate' | 'memory' | 'impact' | 'calendar' | 'circle' | 'invitePreview' | 'ride';
 
 const NAV: { id: Screen; icon: InkName; label: string }[] = [
   { id: 'home',     icon: 'home',     label: 'Home'     },
@@ -30,7 +30,7 @@ export function BottomNav({
     }}>
       {NAV.map(({ id, icon, label }) => {
         const active = screen === id
-          || (id === 'home' && screen === 'roommate')
+          || (id === 'home' && (screen === 'roommate' || screen === 'ride'))
           || (id === 'profile' && (screen === 'memory' || screen === 'impact' || screen === 'calendar' || screen === 'circle' || screen === 'invitePreview'));
         return (
           <button
